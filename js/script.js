@@ -63,7 +63,7 @@ function showloading() {
   });
 }
 
-window.addEventListener("scroll", () => {
+function scrollChek(){
   if (oldDataLength === newDataLength) {
     return;
   }
@@ -74,7 +74,7 @@ window.addEventListener("scroll", () => {
     console.log("end");
     showloading();
   }
-});
+};
 
 // function searchPosts(text, posts) {
 //   const term = text.toLowerCase();
@@ -103,4 +103,5 @@ function renderFilteredPosts(event) {
 
 renderPosts();
 
+window.addEventListener("scroll", scrollChek)
 filter.addEventListener("input", renderFilteredPosts);
